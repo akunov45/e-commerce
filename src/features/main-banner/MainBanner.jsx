@@ -3,8 +3,10 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
 export const MainBanner = () => {
-  // Инициализация с автоплеем
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
+  // Создаем autoplay плагин с задержкой 3 секунды
+  const autoplay = Autoplay({ delay: 3000, stopOnInteraction: false })
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay])
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
