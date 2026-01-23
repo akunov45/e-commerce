@@ -1,7 +1,11 @@
 import { Heart, Menu, PhoneCall, ShoppingCart, User } from 'lucide-react'
 import SearchInput from '../../features/search-input/SearchInput'
+import { useContext } from 'react'
+import { CART_CONTEXT } from '../../context'
+import { Link } from 'react-router-dom'
 
 const HeaderBottom = () => {
+  const {cart} = useContext(CART_CONTEXT)
   return (
     <div className="container mx-auto flex items-center justify-between px-4 md:px-6 py-4 bg-white">
 
@@ -10,10 +14,10 @@ const HeaderBottom = () => {
         <button className="text-gray-700">
           <Menu />
         </button>
-        <div className="font-bold text-xl flex items-end gap-1">
+        <Link to={"/"} className="font-bold text-xl flex items-end gap-1">
           <img className='w-10' src="/logo-2.png" alt="" />
           <span>MINURA</span>
-        </div>
+        </Link>
       </div>
 
       {/* Поиск: скрыт на мобилках, виден от md (768px) */}
@@ -40,13 +44,15 @@ const HeaderBottom = () => {
           <button className="hover:text-orange-500">
             <User size={24} />
           </button>
-          <button className="hover:text-orange-500 relative">
-            <ShoppingCart size={24} />
-            {/* Опционально: индикатор корзины */}
-            <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center md:hidden">
-              0
-            </span>
-          </button>
+         <Link to={"/cart"}>
+            <button className="hover:text-orange-500 relative">
+              <ShoppingCart size={24} />
+              {/* Опционально: индикатор корзины */}
+              <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center ">
+                {cart.length}
+              </span>
+            </button>
+         </Link>
         </div>
       </div>
     </div>

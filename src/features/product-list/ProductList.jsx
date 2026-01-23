@@ -1,5 +1,7 @@
 import { Plus } from 'lucide-react';
-import React from 'react';
+import  { useContext } from 'react';
+import toast from "react-hot-toast";
+import { CART_CONTEXT } from '../../context';
 
 const products = [
   {
@@ -35,6 +37,8 @@ const products = [
 ];
 
 const ProductList = () => {
+  const { addToCart } = useContext(CART_CONTEXT)
+
   return (
     <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -64,7 +68,10 @@ const ProductList = () => {
                 <h3 className="text-lg font-medium text-gray-900 mb-2 truncate">{product.name}</h3>
                 <div className="flex items-center justify-between">
                   <span className="text-xl font-semibold text-stone-700">{product.price} <span className='underline underline-offset-2'>c</span></span>
-                  <button className="bg-stone-800 text-white p-2 rounded-full hover:bg-stone-600 transition-colors">
+                  <button onClick={() => {
+                    addToCart(product)
+                    toast.success('Товар добавлен в корзину')
+                  }} className="bg-stone-800 text-white p-2 rounded-full hover:bg-stone-600 transition-colors">
                    <Plus/>
                   </button>
                 </div>

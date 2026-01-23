@@ -1,10 +1,13 @@
+import CartContext from '../context'
 import AppRoutes from '../router/router'
+import  { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
-    <div>
+    <CartContext>
       <AppRoutes />
-    </div>
+      <Toaster position="top-right" reverseOrder={false} />
+    </CartContext>
   )
 }
 
