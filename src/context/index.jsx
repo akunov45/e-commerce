@@ -36,3 +36,5 @@ const CartContext = ({ children }) => {
 }
 
 export default CartContext
+
+

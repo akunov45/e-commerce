@@ -70,7 +70,7 @@ const Footer = () => {
             <span className="
     px-4 py-2
     border
-    border-(--color-orange)
+    hover:border-(--color-orange)
     text-sm
     font-semibold
     hover:opacity-90

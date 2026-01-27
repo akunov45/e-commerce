@@ -15,7 +15,7 @@ const CartPage = () => {
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Корзина</h1>
 
       {cart.length === 0 ? (
-        <p className="text-gray-500 text-lg">Ваша корзина пуста 😔</p>
+        <p className="text-gray-500 text-lg text-center">Ваша корзина пуста 😔</p>
       ) : (
         <div className="flex flex-col gap-4">
           {/* Горизонтальный скролл для таблицы */}
