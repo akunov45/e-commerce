@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="text-(--color-text)">
       <div className="container mx-auto px-4 py-12 grid gap-10 md:grid-cols-4 sm:grid-cols-2">
 
         {/* Logo + about */}
@@ -12,7 +12,7 @@ const Footer = () => {
               MINURA
             </span>
           </h2>
-          <p className="text-sm leading-relaxed text-gray-400">
+          <p className="text-sm leading-relaxed ">
             Современный e-commerce магазин. Качество, скорость и стиль —
             без лишних слов.
           </p>
@@ -20,27 +20,28 @@ const Footer = () => {
 
         {/* Catalog */}
         <div>
-          <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wide">
+          <h3 className="text-sm font-semibold  mb-4 uppercase tracking-wide">
             Каталог
           </h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:text-white transition">Новинки</li>
-            <li className="hover:text-white transition">Хиты продаж</li>
-            <li className="hover:text-white transition">Скидки</li>
-            <li className="hover:text-white transition">Категории</li>
+            <li className="hover:text-(--color-orange) transition">Новинки</li>
+            <li className="hover:text-(--color-orange)  transition">Хиты продаж</li>
+            <li className="hover:text-(--color-orange)  transition">Скидки</li>
+            <li className="hover:text-(--color-orange)  transition">Категории</li>
           </ul>
         </div>
 
         {/* Info */}
         <div>
-          <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wide">
+          <h3 className="text-sm font-semibold mb-4 uppercase tracking-wide">
             Информация
           </h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:text-white transition">О нас</li>
-            <li className="hover:text-white transition">Доставка</li>
-            <li className="hover:text-white transition">Оплата</li>
-            <li className="hover:text-white transition">Контакты</li>
+            <li className="hover:text-(--color-orange) transition">О нас</li>
+            <li className="hover:text-(--color-orange) transition">Оплата</li>
+            <li className="hover:text-(--color-orange) transition">
+              Поставки по всем странам СНГ
+            </li>
           </ul>
         </div>
 
@@ -49,28 +50,43 @@ const Footer = () => {
           <h3 className="text-sm font-semibold text-white mb-4 uppercase tracking-wide">
             Подписка
           </h3>
-          <p className="text-sm text-gray-400 mb-4">
+          <p className="text-sm mb-4">
             Получай скидки и новости первым
           </p>
-          <form className="flex">
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full px-3 py-2 rounded-l-md bg-gray-800 text-sm text-white placeholder-gray-400 focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="px-4 py-2 bg-orange-500 text-white text-sm rounded-r-md hover:bg-orange-600 transition"
-            >
-              OK
-            </button>
-          </form>
+          <a
+            href="https://chat.whatsapp.com/+996508886000"
+            target="_blank"
+            className="
+    flex items-center justify-between
+    w-full
+    rounded-md
+    overflow-hidden
+  "
+          >
+            <span className=" py-2 text-sm ">
+              Акции и новинки в WhatsApp
+            </span>
+
+            <span className="
+    px-4 py-2
+    border
+    border-(--color-orange)
+    text-sm
+    font-semibold
+    hover:opacity-90
+    transition
+    rounded-md
+  ">
+              Перейти
+            </span>
+          </a>
+
         </div>
       </div>
 
       {/* Bottom */}
       <div className="border-t border-gray-800 py-4 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Minura. All rights reserved.
+        © {new Date().getFullYear()} MINTEXT. All rights reserved.
       </div>
     </footer>
   );

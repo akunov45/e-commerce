@@ -6,6 +6,8 @@ import "./index.css"
 const root = document.getElementById('root')
 createRoot(root).render(
   <BrowserRouter>
-    <App />
+    <div className='bg-(--color-bg)'>
+      <App />
+    </div>
   </BrowserRouter>
 )

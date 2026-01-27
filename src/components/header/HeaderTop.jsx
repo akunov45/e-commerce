@@ -8,7 +8,6 @@ const HeaderTop = () => {
       <div className="
   flex gap-1 items-center
   px-2 py-1
-  bg-green-50
   text-green-700
   rounded-full
 ">

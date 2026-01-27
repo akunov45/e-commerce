@@ -66,14 +66,14 @@ const CartPage = () => {
 
           {/* Итоговая сумма */}
           <div className="flex justify-end mt-4">
-            <p className="text-lg font-bold text-gray-800">
+            <p className="text-lg font-bold text-(--primary-color)">
               Итого: {totalPrice.toLocaleString()} сом
             </p>
           </div>
 
           {/* Кнопка оформить заказ */}
           <div className="flex justify-end mt-2">
-            <button className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition text-sm">
+            <button className="px-6 py-2 border hover:border-(--color-orange) rounded-lg  transition text-sm">
               Оформить заказ
             </button>
           </div>

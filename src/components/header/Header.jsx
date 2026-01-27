@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <HeaderTop />
-      <div className="h-px bg-gray-700 w-full" />
+      <div className="h-p w-full" />
       <HeaderBottom />
     </header>
   )

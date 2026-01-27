@@ -1,4 +1,4 @@
-import { Plus } from 'lucide-react';
+import { Plus, ShoppingBag } from 'lucide-react';
 import  { useContext } from 'react';
 import toast from "react-hot-toast";
 import { CART_CONTEXT } from '../../context';
@@ -40,39 +40,57 @@ const ProductList = () => {
   const { addToCart } = useContext(CART_CONTEXT)
 
   return (
-    <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className=" min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-serif text-gray-800 mb-8 text-center italic">Home Comfort Collection</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div key={product.id} className="group relative bg-white rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100/50 flex flex-col h-full">
 
-              {/* Image Section */}
-              <div className="relative aspect-[4/5] overflow-hidden">
+              {/* Секция изображения */}
+              <div className="relative aspect-3/4 overflow-hidden bg-gray-50">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 {product.tag && (
-                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-sm z-10">
                     {product.tag}
                   </span>
                 )}
               </div>
 
-              {/* Content Section */}
-              <div className="p-6">
-                <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">{product.category}</p>
-                <h3 className="text-lg font-medium text-gray-900 mb-2 truncate">{product.name}</h3>
-                <div className="flex items-center justify-between">
-                  <span className="text-xl font-semibold text-stone-700">{product.price} <span className='underline underline-offset-2'>c</span></span>
-                  <button onClick={() => {
-                    addToCart(product)
-                    toast.success('Товар добавлен в корзину')
-                  }} className="bg-stone-800 text-white p-2 rounded-full hover:bg-stone-600 transition-colors">
-                   <Plus/>
+              {/* Секция контента */}
+              <div className="p-6 flex flex-col grow justify-between">
+                <div>
+                  <div className="mb-2">
+                    <span className="inline-block px-2 py-0.5 border border-pink-100 text-[10px] text-gray-400 uppercase tracking-[0.15em] font-medium">
+                      {product.category}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-medium text-slate-800 mb-4 leading-snug line-clamp-2">
+                    {product.name}
+                  </h3>
+                </div>
+
+                <div className="flex items-center justify-between pt-2">
+                  <span className="text-xl font-bold text-slate-900 tracking-tight">
+                    {product.price} <span className="underline underline-offset-4 decoration-[0.5px] font-light">с</span>
+                  </span>
+
+                  <button
+                    onClick={() => {
+                      addToCart(product);
+                      toast.success('Товар добавлен в корзину');
+                    }}
+                    className=" border border-(--color-orange)  p-3 rounded-xl  transition-all duration-300 transform hover:-translate-y-1 active:scale-90 shadow-sm"
+                    aria-label="Добавить в корзину"
+                  >
+                    {/* Используем ShoppingBag для более "дорогого" вида */}
+                    <ShoppingBag size={20} strokeWidth={2} />
                   </button>
                 </div>
               </div>

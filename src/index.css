@@ -1,1 +1,31 @@
+:root {
+  /* Brand / CTA */
+  --color-primary: #2563EB;
+  /* чистый синий — доверие + покупки */
+  --color-primary-hover: #1D4ED8;
+
+  /* Accent (скидки, бейджи) */
+  --color-accent: #EC4899;
+  /* мягкий розово-коралловый */
+
+  /* Background */
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #F8FAFC;
+  /* светло-серый фон */
+
+  /* Text */
+  --color-text: #0F172A;
+  /* почти чёрный */
+  --color-text-muted: #64748B;
+
+  /* Borders */
+  --color-border: #E2E8F0;
+
+  /* Status */
+  --color-success: #16A34A;
+  --color-error: #DC2626;
+  --color-orange: #ff6900;
+}
+
 @import "tailwindcss";
+
