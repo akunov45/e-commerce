@@ -28,7 +28,7 @@ const HeaderBottom = () => {
       <div className="flex items-center gap-3 md:gap-6">
         {/* Телефон: полностью скрыт на мобилках, виден от md */}
         <div className="hidden md:flex items-center gap-2 cursor-pointer group">
-          <div className="p-2 border border-gray-200 rounded-lg group-hover:bg-gray-50">
+          <div className="p-2 border hover:border-(--color-orange) rounded-lg ">
             <a href="tel:+996508886000" >
               <PhoneCall size={20} />
             </a>
@@ -40,16 +40,16 @@ const HeaderBottom = () => {
 
         {/* Правые иконки: всегда видны */}
         <div className="flex items-center gap-4 md:gap-5 text-gray-700">
-          <button className="hover:text-orange-500">
+          <button className="hover:text-(--color-orange)">
             <Link to={"/wish-list"}><Heart size={24} /></Link>
           </button>
-          <button className="hover:text-orange-500">
+          <button className="hover:text-(--color-orange)">
             <Link to="/profile">
               <User size={24} />
             </Link>
           </button>
           <Link to={"/cart"}>
-            <button className="hover:text-orange-500 relative">
+            <button className="hover:text-(--color-orange) relative">
               <ShoppingCart size={24} />
               {/* Опционально: индикатор корзины */}
               <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center ">

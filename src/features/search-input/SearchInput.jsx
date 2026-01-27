@@ -14,14 +14,14 @@ const SearchInput = () => {
              outline-none transition-all duration-200
              placeholder:text-gray-500 text-gray-800
              group-hover:bg-gray-200/70
-             focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent focus:shadow-lg"
+             focus:bg-white focus:ring-2 focus:ring-(--color-orange) focus:border-transparent focus:shadow-lg"
         />
 
         <button
           type="submit"
           className="absolute right-1.5 top-1/2 -translate-y-1/2
              bg-white p-2.5 rounded-full shadow-sm
-             text-gray-700 hover:text-orange-600 hover:shadow-md
+             text-gray-700 hover:text-(--color-orange) hover:shadow-md
              active:scale-95 transition-all duration-200"
         >
           <Search />
