@@ -10,18 +10,17 @@ const SearchInput = () => {
           type="text"
           name="q"
           placeholder="Искать товары"
-          className="w-full py-3 pl-6 pr-14 bg-gray-100 border border-transparent rounded-full
+          className="w-full py-3 pl-6 pr-14 bg-(--color-white-cloud) border border-(--color-grey) rounded-full
              outline-none transition-all duration-200
-             placeholder:text-gray-500 text-gray-800
-             group-hover:bg-gray-200/70
-             focus:bg-white focus:ring-2 focus:ring-(--color-orange) focus:border-transparent focus:shadow-lg"
+             placeholder:text-(--color-green) text-gray-800
+             group-hover:bg-(--color-white-cloud)
+             focus:bg-white focus:ring-2 focus:ring-(--color-white-cloud) focus:border-transparent focus:shadow-lg"
         />
-
         <button
           type="submit"
-          className="absolute right-1.5 top-1/2 -translate-y-1/2
-             bg-white p-2.5 rounded-full shadow-sm
-             text-gray-700 hover:text-(--color-orange) hover:shadow-md
+          className="absolute cursor-pointer right-1 top-1/2 -translate-y-1/2
+             bg-white hover:bg-(--color-green) hover:text-white  p-2.5  rounded-full shadow-sm
+             text-gray-700 hover:shadow-md
              active:scale-95 transition-all duration-200"
         >
           <Search />

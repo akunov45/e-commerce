@@ -1,15 +1,14 @@
 
 const Footer = () => {
   return (
-    <footer className="text-(--color-text)">
+    <footer className="text-(--color-grey) bg-(--color-bg-footer)">
       <div className="container mx-auto px-4 py-12 grid gap-10 md:grid-cols-4 sm:grid-cols-2">
 
         {/* Logo + about */}
         <div>
           <h2 className="text-xl flex items-center gap-2 font-semibold text-white mb-4">
-            <img className="w-12" src="/logo-2.png" alt="" />
             <span>
-              MINURA
+              MUNITEXT
             </span>
           </h2>
           <p className="text-sm leading-relaxed ">
@@ -66,7 +65,6 @@ const Footer = () => {
             <span className=" py-2 text-sm ">
               Акции и новинки в WhatsApp
             </span>
-
             <span className="
     px-4 py-2
     border
@@ -85,7 +83,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-gray-800 py-4 text-center text-sm text-gray-500">
+      <div className="border-t border-(--color-grey) py-4 text-center text-sm text-(--color-grey)">
         © {new Date().getFullYear()} MINTEXT. All rights reserved.
       </div>
     </footer>

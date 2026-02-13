@@ -3,12 +3,13 @@ import { Link } from "react-router-dom"
 
 const HeaderTop = () => {
   const menu = ["Оплата и доставка", "Возврат", "Контакты"]
+
   return (
     <div className="container mx-auto px-4 flex items-center justify-between py-3">
       <div className="
   flex gap-1 items-center
   px-2 py-1
-  text-green-700
+  text-(--color-green)
   rounded-full
 ">
         <Navigation size={14} />
@@ -24,8 +25,8 @@ const HeaderTop = () => {
                 to=""
                 className="
           md:px-3 px-1 py-1 rounded
-          hover:text-orange-500
-          hover:bg-orange-100
+          hover:text-white
+          hover:bg-(--color-green)
           transition
         "
               >
