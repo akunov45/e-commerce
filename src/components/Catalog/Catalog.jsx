@@ -101,17 +101,17 @@ const CatalogMenu = ({ isOpen, onClose }) => {
                     <a
                       key={item}
                       href={`/catalog/${activeCategory}/${item}`}
-                      className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 shadow-sm hover:border-blue-300 transition-all group"
+                      className="flex items-center justify-between p-4 bg-white rounded-lg border border-(--color-green) shadow-sm hover:border-(--color-green) transition-all group"
                     >
-                      <span className="text-gray-700 font-medium group-hover:text-blue-600">{item}</span>
-                      <ShoppingBag size={18} className="text-gray-300 group-hover:text-blue-500" />
+                      <span className="text-gray-700 font-medium group-hover:text-(--color-green)">{item}</span>
+                      <ShoppingBag size={18} className="text-gray-300 group-hover:text-(--color-green)" />
                     </a>
                   ))}
                 </div>
               </div>
 
               <div className="p-6 bg-white border-t">
-                <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold tracking-wide hover:bg-blue-700 transition-shadow shadow-lg shadow-blue-200">
+                <button className="w-full bg-(--color-green) text-white py-4 rounded-xl font-bold tracking-wide hover:bg-transparent hover:text-(--color-green) border border-(--color-green) transition-shadow shadow-lg shadow-blue-200">
                   СМОТРЕТЬ ВСЮ КОЛЛЕКЦИЮ
                 </button>
               </div>
