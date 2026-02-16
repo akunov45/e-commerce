@@ -1,12 +1,12 @@
 import HeaderTop from "./HeaderTop"
 import HeaderBottom from "./HeaderBottom"
 
-const Header = () => {
+const Header = ({ toggleCatalog }) => {
   return (
     <header>
       <HeaderTop />
       <div className="h-p w-full" />
-      <HeaderBottom />
+      <HeaderBottom toggleCatalog={toggleCatalog} />
     </header>
   )
 }

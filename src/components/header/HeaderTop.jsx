@@ -1,8 +1,9 @@
 import { Navigation } from "lucide-react"
 import { Link } from "react-router-dom"
+import { headerRoutes } from "../../router"
 
 const HeaderTop = () => {
-  const menu = ["Оплата и доставка", "Возврат", "Контакты"]
+
 
   return (
     <div className="container mx-auto px-4 flex items-center justify-between py-3">
@@ -19,10 +20,10 @@ const HeaderTop = () => {
 
       <div>
         <ul className="flex md:gap-5 gap-1 text-xs">
-          {menu.map((item, index) => (
-            <li key={index}>
+          {headerRoutes.filter(item => item.isShow).map((item, index) => (
+            <li key={index} >
               <Link
-                to=""
+                to={item.path}
                 className="
           md:px-3 px-1 py-1 rounded
           hover:text-white
@@ -30,7 +31,7 @@ const HeaderTop = () => {
           transition
         "
               >
-                {item}
+                {item.name}
               </Link>
             </li>
           ))}

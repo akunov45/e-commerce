@@ -4,15 +4,15 @@ import { useContext } from 'react'
 import { CART_CONTEXT } from '../../context'
 import { Link } from 'react-router-dom'
 
-const HeaderBottom = () => {
+const HeaderBottom = ({ toggleCatalog }) => {
   const { cart } = useContext(CART_CONTEXT)
   return (
     <div className="container mx-auto flex items-center justify-between px-4 py-4 ">
-
       {/* Левая часть: Меню и Лого всегда видны */}
       <div className="flex items-center gap-4">
-        <button className="text-(--color-green)  md:hidden">
+        <button onClick={toggleCatalog} className="text-(--color-green) flex border border-(--color-grey) py-2 px-4 rounded-md gap-2 items-center hover:bg-(--color-green) hover:text-white cursor-pointer" >
           <Menu />
+          <span className='text-xl'> Каталог</span>
         </button>
         <Link to={"/"} className="font-bold text-xl flex items-end gap-1">
           <span className="text-(--color-green)">MUNITEXT</span>
@@ -33,7 +33,9 @@ const HeaderBottom = () => {
             </a>
           </div>
           <div className="flex flex-col">
-            <span className="font-bold  leading-tight text-(--color-green)">+996 508 886 000</span>
+            <a href="tel:+996508886000" >
+              <span className="font-bold  leading-tight text-(--color-green)">+996 508 886 000</span>
+            </a>
           </div>
         </div>
 
@@ -50,7 +52,6 @@ const HeaderBottom = () => {
           <Link to={"/cart"}>
             <button className="text-(--color-green) relative">
               <ShoppingCart size={24} />
-              {/* Опционально: индикатор корзины */}
               <span className="absolute -top-1 -right-1 bg-(--color-green) text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center ">
                 {cart.length}
               </span>
