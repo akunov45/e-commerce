@@ -1,99 +1,120 @@
-import React, { useState } from 'react';
-import { ChevronRight, X, ArrowLeft } from 'lucide-react';
+import { useState } from 'react';
+import { ChevronRight, X, ArrowLeft, ShoppingBag } from 'lucide-react';
 
 const CatalogMenu = ({ isOpen, onClose }) => {
   const [activeCategory, setActiveCategory] = useState(null);
 
+  // Категории на основе вашего инстаграма Munira Home
   const categories = [
     {
-      id: 'bedding',
-      title: 'Постельное белье',
-      image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=200&q=80',
-      items: ['Комплекты (Satin)', 'Наволочки', 'Пододеяльники', 'Простыни на резинке', 'Детское постельное']
+      id: 'towels',
+      title: 'Полотенца',
+      image: 'https://i.pinimg.com/736x/4c/34/63/4c3463eab48e3bc0527bc4f4290a4c25.jpg',
+      items: ['Для лица', 'Банные', 'Наборы полотенец', 'Кухонные салфетки']
     },
     {
-      id: 'bath',
-      title: 'Для ванной',
-      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=200&q=80',
-      items: ['Полотенца махровые', 'Банные халаты', 'Коврики для ванной', 'Наборы для сауны', 'Полотенца для лица']
+      id: 'bathrobes',
+      title: 'Халаты',
+      image: 'https://i.pinimg.com/736x/4f/28/cc/4f28cccbbc1736fedbe64c6a9fb3f28e.jpg',
+      items: ['Мужские халаты', 'Женские халаты', 'Детские халаты', 'Микрофибра халаты']
     },
     {
-      id: 'living',
-      title: 'Уютный дом',
-      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=200&q=80',
-      items: ['Пледы', 'Декоративные подушки', 'Скатерти', 'Шторы и тюль', 'Ароматы для дома']
+      id: 'microfiber',
+      title: 'Микрофибра',
+      image: 'https://i.pinimg.com/736x/3f/0f/71/3f0f71dbbee13799ee7e523fb811008a.jpg',
+      items: ['Для уборки', 'Сверхвпитывающие', 'Тюрбаны для волос', 'Авто-микрофибра']
     },
     {
-      id: 'homewear',
-      title: 'Домашняя одежда',
-      image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=200&q=80',
-      items: ['Пижамы', 'Тапочки', 'Трикотажные костюмы', 'Маски для сна']
+      id: 'gifts',
+      title: 'Подарки и уют',
+      image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=400&q=80',
+      items: ['Подарочные боксы', 'Подушки-игрушки', 'Дорожные подушки', 'Пледы']
     }
   ];
 
   const currentDetails = categories.find(c => c.id === activeCategory);
 
   return (
-    <div className={`fixed inset-0 z-50 ${isOpen ? 'visible' : 'invisible'}`}>
-      {/* Затемнение фона */}
+    <div className={`fixed inset-0 z-100 ${isOpen ? 'visible' : 'invisible'}`}>
+      {/* Overlay */}
       <div
-        className={`absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
         onClick={() => { setActiveCategory(null); onClose(); }}
       />
 
-      {/* Основная панель меню */}
-      <div className={`absolute left-0 top-0 h-full w-[350px] bg-white shadow-2xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      {/* Main Container */}
+      <div className={`absolute left-0 top-0 h-full flex transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
 
-        <div className="p-6 border-b flex justify-between items-center bg-gray-50">
-          <h2 className="text-xl font-bold tracking-tight text-gray-900">КАТАЛОГ</h2>
-          <button onClick={onClose} className="p-2 hover:bg-white rounded-full transition-colors shadow-sm">
-            <X size={20} />
-          </button>
+        {/* ЛЕВАЯ ПАНЕЛЬ (Категории) */}
+        <div className="w-screen sm:w-95 h-full bg-white shadow-xl flex flex-col border-r">
+          <div className="p-6 border-b flex justify-between items-center bg-white sticky top-0">
+            <h2 className="text-lg font-bold tracking-widest text-(--color-green) uppercase">MuniText Home</h2>
+            <button onClick={onClose} className="p-2 border transition-all
+    duration-300
+    ease-in-out border-(--color-green) hover:bg-(--color-green) hover:text-white rounded-full">
+              <X size={24} />
+            </button>
+          </div>
+
+          <nav className="overflow-y-auto flex-1 bg-white">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`w-full flex items-center justify-between px-6 py-6 border-b border-gray-50 transition-colors ${activeCategory === cat.id ? 'bg-blue-50 text-(--color-green)' : 'hover:bg-gray-50'}`}
+              >
+                <span className="font-medium text-lg uppercase tracking-tight">{cat.title}</span>
+                <ChevronRight size={20} />
+              </button>
+            ))}
+          </nav>
         </div>
 
-        <nav className="flex flex-col h-full bg-white">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onMouseEnter={() => setActiveCategory(cat.id)} // Открывается при наведении (для десктопа)
-              onClick={() => setActiveCategory(cat.id)}      // Или при клике
-              className={`flex items-center justify-between px-6 py-5 border-b border-gray-50 transition-all ${activeCategory === cat.id ? 'bg-amber-50 text-amber-900' : 'hover:bg-gray-50'}`}
-            >
-              <span className="font-semibold text-lg">{cat.title}</span>
-              <ChevronRight size={20} className={activeCategory === cat.id ? 'translate-x-1' : ''} />
-            </button>
-          ))}
-        </nav>
-
-        {/* ПАНЕЛЬ ДЕТАЛЕЙ (Выезжает справа от основного меню) */}
-        <div className={`absolute top-0 left-full h-full w-[350px] bg-gray-50 shadow-2xl transition-all duration-300 border-l border-gray-100 ${activeCategory ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0 pointer-events-none'}`}>
+        {/* ПРАВАЯ ПАНЕЛЬ (Подкатегории / Детали) */}
+        {/* На мобилках (sm:hidden) она перекрывает основную панель */}
+        <div className={`
+          fixed sm:absolute top-0 left-0 sm:left-full h-full w-screen sm:w-112.5 bg-gray-50 shadow-2xl transition-all duration-300
+          ${activeCategory ? 'translate-x-0 opacity-100' : 'translate-x-full sm:-translate-x-10 opacity-0 pointer-events-none'}
+        `}>
           {currentDetails && (
-            <div className="p-8">
-              <div className="flex items-center gap-2 mb-8 text-amber-700 md:hidden" onClick={() => setActiveCategory(null)}>
-                <ArrowLeft size={18} /> <span>Назад</span>
+            <div className="h-full flex flex-col">
+              {/* Header for details */}
+              <div className="p-6 border-b bg-white flex items-center gap-4">
+                <button onClick={() => setActiveCategory(null)} className="p-2 -ml-2 hover:bg-(--color-green) border border-(--color-green) rounded-full hover:text-white">
+                  <ArrowLeft size={24} />
+                </button>
+                <h3 className="text-xl font-bold uppercase">{currentDetails.title}</h3>
               </div>
 
-              <img
-                src={currentDetails.image}
-                alt={currentDetails.title}
-                className="w-full h-40 object-cover rounded-lg mb-6 shadow-md"
-              />
+              <div className="overflow-y-auto flex-1 p-6">
+                <div className="relative overflow-hidden rounded-xl mb-8 group">
+                  <img
+                    src={currentDetails.image}
+                    alt={currentDetails.title}
+                    className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/20" />
+                </div>
 
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">{currentDetails.title}</h3>
-
-              <ul className="space-y-4">
-                {currentDetails.items.map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-gray-600 hover:text-black hover:font-bold transition-all text-lg block">
-                      {item}
+                <div className="grid grid-cols-1 gap-3">
+                  {currentDetails.items.map((item) => (
+                    <a
+                      key={item}
+                      href={`/catalog/${activeCategory}/${item}`}
+                      className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 shadow-sm hover:border-blue-300 transition-all group"
+                    >
+                      <span className="text-gray-700 font-medium group-hover:text-blue-600">{item}</span>
+                      <ShoppingBag size={18} className="text-gray-300 group-hover:text-blue-500" />
                     </a>
-                  </li>
-                ))}
-              </ul>
+                  ))}
+                </div>
+              </div>
 
-              <button className="mt-12 w-full border-2 border-black py-3 font-bold hover:bg-black hover:text-white transition-colors">
-                СМОТРЕТЬ ВСЁ
-              </button>
+              <div className="p-6 bg-white border-t">
+                <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold tracking-wide hover:bg-blue-700 transition-shadow shadow-lg shadow-blue-200">
+                  СМОТРЕТЬ ВСЮ КОЛЛЕКЦИЮ
+                </button>
+              </div>
             </div>
           )}
         </div>

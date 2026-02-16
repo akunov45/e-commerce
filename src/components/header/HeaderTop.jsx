@@ -4,7 +4,6 @@ import { headerRoutes } from "../../router"
 
 const HeaderTop = () => {
 
-
   return (
     <div className="container mx-auto px-4 flex items-center justify-between py-3">
       <div className="
