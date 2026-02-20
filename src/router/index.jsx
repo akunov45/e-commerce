@@ -5,9 +5,10 @@ export const ROUTES = {
   PROFILE: "/wish-list",
   WISHLIST: "/profile",
   ABOUTUS: "/about-us",
+  NOTFOUND: "/*",
 };
 
 export const headerRoutes = [
-  { name: "О нас", path: ROUTES.ABOUTUS, isShow: true },
-  { name: "Новости и события", path: ROUTES.NEWS, isShow: true },
+  { name: "О нас", path: ROUTES.ABOUTUS, disabled: false },
+  { name: "Новости и события", path: ROUTES.NEWS, disabled: false },
 ];

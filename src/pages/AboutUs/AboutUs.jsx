@@ -26,7 +26,7 @@ const AboutUs = () => {
         />
         <div className="relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 uppercase tracking-widest">
-            Munitext Home
+            Aqvela
           </h1>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-light">
             Создаем уют и комфорт в каждом доме с 2015 года. Лидеры рынка домашнего текстиля в Кыргызстане.

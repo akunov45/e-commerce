@@ -15,7 +15,7 @@ const HeaderBottom = ({ toggleCatalog }) => {
           <span className='text-xl'> Каталог</span>
         </button>
         <Link to={"/"} className="font-bold text-xl flex items-end gap-1">
-          <span className="text-(--color-green)">MUNITEXT</span>
+          <span className="text-(--color-green)">Aqvela</span>
         </Link>
       </div>
 

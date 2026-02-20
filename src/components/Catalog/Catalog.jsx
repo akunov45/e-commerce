@@ -48,7 +48,7 @@ const CatalogMenu = ({ isOpen, onClose }) => {
         {/* ЛЕВАЯ ПАНЕЛЬ (Категории) */}
         <div className="w-screen sm:w-95 h-full bg-white shadow-xl flex flex-col border-r">
           <div className="p-6 border-b flex justify-between items-center bg-white sticky top-0">
-            <h2 className="text-lg font-bold tracking-widest text-(--color-green) uppercase">MuniText Home</h2>
+            <h2 className="text-lg font-bold tracking-widest text-(--color-green) uppercase">Aqvela</h2>
             <button onClick={onClose} className="p-2 border transition-all
     duration-300
     ease-in-out border-(--color-green) hover:bg-(--color-green) hover:text-white rounded-full">

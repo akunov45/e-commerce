@@ -8,7 +8,7 @@ const Footer = () => {
         <div>
           <h2 className="text-xl flex items-center gap-2 font-semibold text-white mb-4">
             <span>
-              MUNITEXT
+              Aqvela
             </span>
           </h2>
           <p className="text-sm leading-relaxed ">
@@ -84,7 +84,7 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="border-t border-(--color-grey) py-4 text-center text-sm text-(--color-grey)">
-        © {new Date().getFullYear()} MINTEXT. All rights reserved.
+        © {new Date().getFullYear()} Aqvela. All rights reserved.
       </div>
     </footer>
   );

@@ -51,10 +51,10 @@ const News = () => {
             <div
               key={newsItem.id}
               className="
-                bg-[var(--color-white-cloud)]
+                bg-(--color-white-cloud)
                 rounded-2xl
                 shadow-lg
-                border border-[var(--color-grey)]
+                border border-(--color-grey)
                 overflow-hidden
                 flex flex-col
                 transition-transform
@@ -79,9 +79,9 @@ const News = () => {
               </div>
 
               {/* Тело карточки */}
-              <div className="p-6 flex flex-col flex-grow bg-white">
+              <div className="p-6 flex flex-col grow bg-white">
                 <h3 className="text-xl font-bold mb-3 leading-snug">{newsItem.title}</h3>
-                <p className="text-gray-600 text-sm mb-4 flex-grow">{newsItem.text}</p>
+                <p className="text-gray-600 text-sm mb-4 grow">{newsItem.text}</p>
                 <p className="text-xs text-gray-400 mb-6">{newsItem.date}</p>
 
                 {/* Кнопка "Подробнее" */}
@@ -91,11 +91,11 @@ const News = () => {
                     className="
                       inline-flex items-center justify-center
                       px-6 py-3
-                      border border-[var(--color-green)]
-                      text-[var(--color-green)]
+                      border border-(--color-green)
+                      text-(--color-green)
                       rounded-full
                       font-semibold
-                      hover:bg-[var(--color-green)]
+                      hover:bg-(--color-green)
                       hover:text-white
                       transition-all
                       duration-300

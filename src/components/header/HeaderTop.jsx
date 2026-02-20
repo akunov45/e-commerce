@@ -19,7 +19,7 @@ const HeaderTop = () => {
 
       <div>
         <ul className="flex md:gap-5 gap-1 text-xs">
-          {headerRoutes.filter(item => item.isShow).map((item, index) => (
+          {headerRoutes.filter(item => !item.disabled).map((item, index) => (
             <li key={index} >
               <Link
                 to={item.path}
